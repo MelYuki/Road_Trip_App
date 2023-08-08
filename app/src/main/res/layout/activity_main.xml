@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/spacer_inner"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_main_welcome"
+        android:textSize="48sp"
+        android:textStyle="italic"
+        android:textColor="@color/blue_light"
+        android:fontFamily="cursive"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_main_geektrotters"
+        android:textSize="48sp"
+        android:textStyle="bold|italic"
+        android:textColor="@color/pink"
+        android:fontFamily="cursive"
+        android:textAlignment="center"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:src="@drawable/globe_trotteurs"
+        android:layout_marginVertical="@dimen/spacer_main_img"
+        android:contentDescription="@string/img_main_globe"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/spacer_inner">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_research"
+            android:textSize="18sp"
+            android:textColor="@color/yellow"
+            android:backgroundTint="@color/blue_light"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_fav"
+            android:textSize="18sp"
+            android:textColor="@color/yellow"
+            android:backgroundTint="@color/blue_dark"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

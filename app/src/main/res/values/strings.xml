@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RoadTripApp</string>
+    <string name="img_main_globe">globe de la page principale</string>
+    <string name="title_main_welcome">Welcome</string>
+    <string name="title_main_geektrotters">Geek Trotters</string>
+    <string name="btn_research">Research a Town</string>
+    <string name="btn_fav">Favorite\'s</string>
+</resources>
