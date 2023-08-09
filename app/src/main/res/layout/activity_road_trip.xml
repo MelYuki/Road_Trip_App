@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/spacer_inner"
+    tools:context=".RoadTripActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_main_geektrotters"
+        android:textSize="@dimen/title_size"
+        android:textStyle="bold|italic"
+        android:textColor="@color/pink"
+        android:fontFamily="cursive"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_roadtrips"
+        android:textSize="@dimen/title_size"
+        android:textStyle="italic"
+        android:textColor="@color/blue_light"
+        android:fontFamily="cursive"
+        android:textAlignment="center"/>
+
+</LinearLayout>

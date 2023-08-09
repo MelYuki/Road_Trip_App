@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/title_main_welcome"
-        android:textSize="48sp"
+        android:textSize="@dimen/title_size"
         android:textStyle="italic"
         android:textColor="@color/blue_light"
         android:fontFamily="cursive"
@@ -22,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/title_main_geektrotters"
-        android:textSize="48sp"
+        android:textSize="@dimen/title_size"
         android:textStyle="bold|italic"
         android:textColor="@color/pink"
         android:fontFamily="cursive"
@@ -44,22 +43,47 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingHorizontal="@dimen/spacer_inner">
+        android:paddingHorizontal="@dimen/spacer_inner"
+        android:paddingVertical="5dp">
 
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/btn_research"
-            android:textSize="18sp"
-            android:textColor="@color/yellow"
-            android:backgroundTint="@color/blue_light"/>
-        <Button
+            android:id="@+id/btn_main_fav"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/btn_fav"
-            android:textSize="18sp"
+            android:textSize="@dimen/btn_text_size"
             android:textColor="@color/yellow"
             android:backgroundTint="@color/blue_dark"/>
+        <Button
+            android:id="@+id/btn_main_roadtrips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_roadtrip"
+            android:textSize="20sp"
+            android:textColor="@color/yellow"
+            android:backgroundTint="@color/purple"/>
+        <EditText
+            android:id="@+id/et_main_country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textColor="@color/blue_dark"
+            android:hint="@string/et_main_placeholder_country"/>
+        <EditText
+            android:id="@+id/et_main_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textColor="@color/blue_dark"
+            android:hint="@string/et_main_placeholder_city"/>
+        <Button
+            android:id="@+id/btn_main_research"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_research"
+            android:textSize="20sp"
+            android:textColor="@color/yellow"
+            android:backgroundTint="@color/blue_light"/>
 
     </LinearLayout>
 

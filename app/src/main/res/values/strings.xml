@@ -1,8 +1,18 @@
 <resources>
-    <string name="app_name">RoadTripApp</string>
-    <string name="img_main_globe">globe de la page principale</string>
+    <string name="app_name">Geek Trotters</string>
+
     <string name="title_main_welcome">Welcome</string>
     <string name="title_main_geektrotters">Geek Trotters</string>
-    <string name="btn_research">Research a Town</string>
-    <string name="btn_fav">Favorite\'s</string>
+    <string name="title_research">Research</string>
+    <string name="title_favorites">Favorites</string>
+    <string name="title_roadtrips">Road Trips</string>
+
+    <string name="img_main_globe">globe de la page principale</string>
+
+    <string name="btn_research">Research</string>
+    <string name="btn_fav">Favorites</string>
+    <string name="btn_roadtrip">Road Trips</string>
+    <string name="fab_research_desc">Option Button</string>
+    <string name="et_main_placeholder_country">Enter a country ...</string>
+    <string name="et_main_placeholder_city">Enter a city ...</string>
 </resources>
