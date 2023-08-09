@@ -1,4 +1,4 @@
-package be.melyuki.roadtripapp
+package be.melyuki.roadtripapp.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

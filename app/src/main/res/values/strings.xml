@@ -15,4 +15,6 @@
     <string name="fab_research_desc">Option Button</string>
     <string name="et_main_placeholder_country">Enter a country ...</string>
     <string name="et_main_placeholder_city">Enter a city ...</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

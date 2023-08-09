@@ -25,18 +25,18 @@ Utiliser une des API suivantes pour réaliser la fonctionnalité :
 # Informations
 - Librairie
     * Carte interactive : « Maps SDK for Android » de mapbox
-    https://docs.mapbox.com/android/maps/guides/install/
+        * https://docs.mapbox.com/android/maps/guides/install/
     * Charger et afficher des images : « Glide »
-    https://bumptech.github.io/glide/
+        * https://bumptech.github.io/glide/
 - API
     * Pour rechercher des villes :
-    https://nominatim.org/release-docs/develop/api/Search/
-    https://countrystatecity.in/docs/
+        * https://nominatim.org/release-docs/develop/api/Search/
+        * https://countrystatecity.in/docs/
     * Pour la météo : « Open Weather Map »
-    https:/openweathermap.org/current
+        * https:/openweathermap.org/current
     * Pour obtenir les points d'intérêt d'une ville : « Geacoding » de mapbox
-    https://docs.mapbox.com/api/search/geocoding/
+        * https://docs.mapbox.com/api/search/geocoding/
     * Pour rechercher des images par mot clef : « photos-search » de pexels
-    https://www.pexels.com/fr-fr/api/documentation/?#photos-search
+        * https://www.pexels.com/fr-fr/api/documentation/?#photos-search
 
 ### <i>NB : D'autres contraintes et demandes peuvent être ajoutés par la suite par le client (le formateur)</i>
