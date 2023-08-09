@@ -54,4 +54,8 @@ dependencies {
         exclude(group = "group_name", module = "module_name")
     }
 
+    implementation("androidx.fragment:fragment-ktx:1.6.1")
+
+    implementation("com.mapbox.mapboxsdk:mapbox-android-geocoder:1.0.0@aar")
+
 }

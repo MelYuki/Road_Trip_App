@@ -29,7 +29,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="250dp"
         android:src="@drawable/globe_trotteurs"
         android:layout_marginVertical="@dimen/spacer_main_img"
         android:contentDescription="@string/img_main_globe"/>
