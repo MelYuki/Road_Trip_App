@@ -6,12 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import be.melyuki.roadtripapp.R
-class MapFragment : Fragment() {
+
+//import com.mapbox.maps.MapView
+class MapFragment private constructor(): Fragment() {
     companion object {
         @JvmStatic
-        fun newInstance() =
-            MapFragment().apply {
-            }
+        fun newInstance() : MapFragment {
+            return MapFragment()
+        }
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

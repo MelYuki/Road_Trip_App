@@ -49,5 +49,9 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
-    implementation("com.mapbox.maps:android:10.15.0")
+
+    implementation ("com.mapbox.maps:android:10.15.0") {
+        exclude(group = "group_name", module = "module_name")
+    }
+
 }
