@@ -14,26 +14,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnMainResearch.setOnClickListener { goResearch() }
+        binding.btnMainResearch.setOnClickListener { nextActivity(ResearchActivity::class.java) }
         binding.btnMainFav.setOnClickListener { nextActivity(FavActivity::class.java) }
         binding.btnMainRoadtrips.setOnClickListener { nextActivity(RoadTripActivity::class.java) }
-    }
-
-    private fun goResearch() {
-        val country : String = binding.etMainCountry.text.toString()
-        val city : String = binding.etMainCity.text.toString()
-
-        val intent = Intent(this, ResearchActivity::class.java).apply {
-            putExtra(ResearchActivity.EXTRA_COUNTRY, country)
-            putExtra(ResearchActivity.EXTRA_CITY, city)
-        }
-
-        binding.etMainCountry.text.clear()
-        binding.etMainCountry.clearFocus()
-        binding.etMainCity.text.clear()
-        binding.etMainCity.clearFocus()
-
-        startActivity(intent)
     }
 
     private fun nextActivity(classe: Class<*>) {

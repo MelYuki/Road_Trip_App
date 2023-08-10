@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,6 +13,40 @@
         mapbox:mapbox_cameraTargetLat="40.7128"
         mapbox:mapbox_cameraTargetLng="-74.0060"
         mapbox:mapbox_cameraZoom="9.0"
+        android:layout_below="@id/layout_search"
+        android:layout_alignParentBottom="true"
         />
+    <LinearLayout
+        android:id="@+id/layout_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-</FrameLayout>
+        <EditText
+            android:id="@+id/et_research_city"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="text"
+            android:textColor="@color/pink"
+            android:hint="@string/et_main_placeholder_city"
+            android:background="@color/white"
+            android:padding="10sp"/>
+        <Button
+            android:id="@+id/btn_research_city"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:drawableBottom="@drawable/fab_icon_search"
+            android:drawableTint="@color/pink"
+            android:backgroundTint="@color/white"/>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_research_cities"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:background="@color/yellow"
+        android:layout_below="@id/layout_search"/>
+
+</RelativeLayout>
