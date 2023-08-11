@@ -37,7 +37,7 @@
             android:id="@+id/btn_research_city"
             android:layout_width="60dp"
             android:layout_height="match_parent"
-            android:drawableBottom="@drawable/fab_icon_search"
+            android:drawableBottom="@drawable/fab_icon_btn_research"
             android:drawableTint="@color/pink"
             android:backgroundTint="@color/white"/>
     </LinearLayout>

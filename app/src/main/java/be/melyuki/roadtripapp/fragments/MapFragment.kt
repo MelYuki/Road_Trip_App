@@ -90,7 +90,7 @@ class MapFragment private constructor(): Fragment() {
         val lon = city.lon!!.toDouble()
 
         val cameraPosition = CameraOptions.Builder()
-            .zoom(9.0)
+            .zoom(11.0)
             .center(
                 Point.fromLngLat(lon, lat)
             )
