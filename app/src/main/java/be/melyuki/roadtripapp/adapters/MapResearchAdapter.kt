@@ -41,17 +41,17 @@ class MapResearchAdapter(val context: Context, val nominatimList: MutableList<Ma
 
         val element : MapResearchModel = nominatimList[position]
 
-        val latText = context.getString(R.string.tv_item_city_lat, element.lat)
         val lonText = context.getString(R.string.tv_item_city_long)
+        val latText = context.getString(R.string.tv_item_city_lat, element.lat)
 
         tv_name = convertView.findViewById(R.id.tv_item_city_display_name)
         tv_name.text = element.displayName
 
-        tv_lat = convertView.findViewById(R.id.tv_item_city_lat)
-        tv_lat.text = latText
-
         tv_lon = convertView.findViewById(R.id.tv_item_city_lon)
         tv_lon.text = lonText.format(element.lon)
+
+        tv_lat = convertView.findViewById(R.id.tv_item_city_lat)
+        tv_lat.text = latText
 
         return convertView
     }

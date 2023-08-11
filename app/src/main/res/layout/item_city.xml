@@ -19,21 +19,20 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tv_item_city_lat"
+            android:id="@+id/tv_item_city_lon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/item_city_default_lat"
+            android:text="@string/item_city_default_lon"
             android:textColor="@color/purple"/>
         <Space
             android:layout_width="@dimen/spacer_inner"
             android:layout_height="match_parent"/>
-
         <TextView
-            android:id="@+id/tv_item_city_lon"
+            android:id="@+id/tv_item_city_lat"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/item_city_default_lon"
+            android:text="@string/item_city_default_lat"
             android:textColor="@color/purple"/>
     </LinearLayout>
 
