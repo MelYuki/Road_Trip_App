@@ -3,7 +3,6 @@ package be.melyuki.roadtripapp.services
 import be.melyuki.roadtripapp.models.MapResearchModel
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.mapbox.maps.logW
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.net.HttpURLConnection

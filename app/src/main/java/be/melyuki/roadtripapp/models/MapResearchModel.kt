@@ -19,8 +19,9 @@ data class MapResearchModel(
 //    @SerializedName("boundingbox"  ) var boundingbox : ArrayList<String> = arrayListOf()
 
 
-) {
-    override fun toString(): String {
-        return this.displayName ?: ""
-    }
-}
+)
+//{
+//    override fun toString(): String {
+//        return this.displayName ?: ""
+//    }
+//}

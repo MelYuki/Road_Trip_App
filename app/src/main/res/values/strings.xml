@@ -19,4 +19,9 @@
 
     <!-- Clef "publique" utilisé par la map -->
     <string name="mapbox_access_token">pk.eyJ1IjoibWVseXVraSIsImEiOiJjbGwza2V2bmEwbDgxM2VvNWFiMG5iNzgxIn0.O5QAc-VzqQEsOUE5740TWw</string>
+    <string name="item_city_default_name">display_name</string>
+    <string name="item_city_default_lat">latitude</string>
+    <string name="item_city_default_lon">longitude</string>
+    <string name="tv_item_city_lat">Latitude : %s</string>
+    <string name="tv_item_city_long">Longitude : %s</string>
 </resources>
