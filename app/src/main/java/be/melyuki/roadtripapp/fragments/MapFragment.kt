@@ -1,10 +1,10 @@
 package be.melyuki.roadtripapp.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import android.widget.BaseAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -13,13 +13,11 @@ import be.melyuki.roadtripapp.adapters.MapResearchAdapter
 import be.melyuki.roadtripapp.databinding.FragmentMapBinding
 import be.melyuki.roadtripapp.models.MapResearchModel
 import be.melyuki.roadtripapp.services.NominatimRequest
+import com.google.android.material.internal.ViewUtils.hideKeyboard
 import com.mapbox.geojson.Point
 import com.mapbox.maps.CameraOptions
-import com.mapbox.maps.ScreenCoordinate
 import com.mapbox.maps.Style
-import com.mapbox.maps.dsl.cameraOptions
 import com.mapbox.maps.logW
-import com.mapbox.maps.plugin.animation.moveBy
 import com.mapbox.maps.plugin.gestures.addOnMapClickListener
 import kotlinx.coroutines.launch
 
@@ -42,6 +40,7 @@ class MapFragment private constructor(): Fragment() {
 
     }
 
+    @SuppressLint("RestrictedApi")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -64,7 +63,10 @@ class MapFragment private constructor(): Fragment() {
         binding.lvResearchCities.adapter = adapter
 
         // region Listeners
-        binding.btnResearchCity.setOnClickListener { getCitiesList() }
+        binding.btnResearchCity.setOnClickListener {
+            getCitiesList()
+            hideKeyboard(it)
+        }
 
         binding.mapView.getMapboxMap().addOnMapClickListener{
             clearCitiesList()
@@ -88,7 +90,7 @@ class MapFragment private constructor(): Fragment() {
         val lon = city.lon!!.toDouble()
 
         val cameraPosition = CameraOptions.Builder()
-            .zoom(14.0)
+            .zoom(9.0)
             .center(
                 Point.fromLngLat(lon, lat)
             )
@@ -129,7 +131,6 @@ class MapFragment private constructor(): Fragment() {
             }
         }
         binding.etResearchCity.clearFocus()
-        // Ajouter un hideKeyboard !
     }
 
 
