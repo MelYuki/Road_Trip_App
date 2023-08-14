@@ -10,12 +10,14 @@
         android:id="@+id/mapView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        mapbox:mapbox_cameraTargetLat="50.47663190191615"
-        mapbox:mapbox_cameraTargetLng="4.472538353972164"
-        mapbox:mapbox_cameraZoom="9.0"
+        mapbox:mapbox_locationComponentEnabled = "true"
+        mapbox:mapbox_locationComponentPuckBearingSource = "heading"
         android:layout_below="@id/layout_search"
         android:layout_alignParentBottom="true"
         />
+<!--        mapbox:mapbox_cameraZoom="9.0"-->
+<!--        mapbox:mapbox_cameraTargetLat="50.47663190191615"-->
+<!--        mapbox:mapbox_cameraTargetLng="4.472538353972164"-->
 
     <LinearLayout
         android:id="@+id/layout_search"
@@ -42,11 +44,16 @@
             android:backgroundTint="@color/white"/>
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/lv_research_cities"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
-        android:layout_below="@id/layout_search"/>
+        android:layout_height="300dp"
+        android:layout_below="@id/layout_search">
+
+        <ListView
+            android:id="@+id/lv_research_cities"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"/>
+    </FrameLayout>
 
 </RelativeLayout>

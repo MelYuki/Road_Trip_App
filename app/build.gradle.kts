@@ -58,4 +58,6 @@ dependencies {
 
     implementation("com.mapbox.mapboxsdk:mapbox-android-geocoder:1.0.0@aar")
 
+    implementation("com.google.android.gms:play-services-location:21.0.1")
+
 }

@@ -38,7 +38,6 @@ class MapResearchAdapter(val context: Context, val nominatimList: MutableList<Ma
 //            long = c.lon.toString()
 //        }
 
-
         val element : MapResearchModel = nominatimList[position]
 
         val lonText = context.getString(R.string.tv_item_city_long)

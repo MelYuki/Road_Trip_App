@@ -39,4 +39,11 @@ Utiliser une des API suivantes pour réaliser la fonctionnalité :
     * Pour rechercher des images par mot clef : « photos-search » de pexels
         * https://www.pexels.com/fr-fr/api/documentation/?#photos-search
 
+## Présentation le vendredi après midi (de 14h à 17h / ~ 15 minutes par personne)
+
+* Faire une brève démo de votre application (même si celle-ci n'est pas terminée)
+* Faire une présentation d'une partie de votre code, dont vous êtes content
+    * Explication de celui-ci (objectif & fonctionnement)
+    * Qu'est-ce qui vous a fait choisir cette extrait de code ?
+
 ### <i>NB : D'autres contraintes et demandes peuvent être ajoutés par la suite par le client (le formateur)</i>
