@@ -5,7 +5,7 @@ Utiliser une des API suivantes pour réaliser la fonctionnalité :
     * https://countrystatecity.in/docs/
 - Permettre à l'utilisateur d'obtenir des informations sur les villes : 
     * Afficher le lieu sur la carte
-    * Point d'intérêt
+    * Points d'intérêts
     * La météo actuelle
     * La distance approximative (à vol d'oiseau) avec la position actuelle
 - Permettre à l'utilisateur de créer un road-trip [-> Save in DB]

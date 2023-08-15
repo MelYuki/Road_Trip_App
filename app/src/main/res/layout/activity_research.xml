@@ -6,17 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".activities.ResearchActivity">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_research_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/spacer_inner"
-        android:src="@drawable/fab_icon_arrow"
-        android:backgroundTint="@color/blue_light"
-        android:contentDescription="@string/fab_research_desc"
-        />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,5 +37,192 @@
             android:layout_height="0dp"
             android:layout_weight="1"/>
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/spacer_fab"
+            android:layout_marginTop="@dimen/spacer_fab"
+            android:layout_marginEnd="@dimen/spacer_fab"
+            android:layout_marginBottom="@dimen/spacer_fab"
+            android:gravity="end"
+            android:orientation="vertical"
+            android:padding="@dimen/spacer_fab"
+            tools:ignore="UselessParent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end">
+
+                <TextView
+                    android:id="@+id/tv_fab_like"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/spacer_fab"
+                    android:layout_marginEnd="@dimen/spacer_fab"
+                    android:gravity="center_vertical"
+                    android:text="Like"
+                    android:textColor="@color/purple"
+                    android:textStyle="bold"/>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab_like_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacer_fab"
+                    android:contentDescription="@string/fab_research_desc"
+                    android:src="@drawable/fab_icon_star"
+                    android:visibility="gone"
+                    app:backgroundTint="@color/blue_light"
+                    app:borderWidth="20dp"
+                    app:fabCustomSize="50dp"
+                    app:tint="@color/yellow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end">
+
+                <TextView
+                    android:id="@+id/tv_fab_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/spacer_fab"
+                    android:layout_marginEnd="@dimen/spacer_fab"
+                    android:gravity="center_vertical"
+                    android:text="Distance"
+                    android:textColor="@color/purple"
+                    android:textStyle="bold"/>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab_distance_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacer_fab"
+                    android:contentDescription="@string/fab_research_desc"
+                    android:src="@drawable/fab_icon_distance"
+                    android:visibility="gone"
+                    app:backgroundTint="@color/blue_light"
+                    app:borderWidth="20dp"
+                    app:fabCustomSize="50dp"
+                    app:tint="@color/yellow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end">
+
+                <TextView
+                    android:id="@+id/tv_fab_weather"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/spacer_fab"
+                    android:layout_marginEnd="@dimen/spacer_fab"
+                    android:gravity="center_vertical"
+                    android:text="Weather"
+                    android:textColor="@color/purple"
+                    android:textStyle="bold"/>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab_weather_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacer_fab"
+                    android:contentDescription="@string/fab_research_desc"
+                    android:src="@drawable/fab_icon_cloud"
+                    android:visibility="gone"
+                    app:backgroundTint="@color/blue_light"
+                    app:borderWidth="20dp"
+                    app:fabCustomSize="50dp"
+                    app:tint="@color/yellow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end">
+
+                <TextView
+                    android:id="@+id/tv_fab_poi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/spacer_fab"
+                    android:layout_marginEnd="@dimen/spacer_fab"
+                    android:gravity="center_vertical"
+                    android:text="Points of Interests"
+                    android:textColor="@color/purple"
+                    android:textStyle="bold"/>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab_poi_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacer_fab"
+                    android:contentDescription="@string/fab_research_desc"
+                    android:src="@drawable/fab_icon_poi"
+                    android:visibility="gone"
+                    app:backgroundTint="@color/blue_light"
+                    app:borderWidth="20dp"
+                    app:fabCustomSize="50dp"
+                    app:tint="@color/yellow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end">
+
+                <TextView
+                    android:id="@+id/tv_fab_roadtrip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/spacer_fab"
+                    android:layout_marginEnd="@dimen/spacer_fab"
+                    android:gravity="center_vertical"
+                    android:text="Schedule  Road Trip"
+                    android:textColor="@color/purple"
+                    android:textStyle="bold"/>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab_roadtrip_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacer_fab"
+                    android:contentDescription="@string/fab_research_desc"
+                    android:src="@drawable/fab_icon_roadtrip"
+                    android:visibility="gone"
+                    app:backgroundTint="@color/blue_light"
+                    app:borderWidth="20dp"
+                    app:fabCustomSize="50dp"
+                    app:tint="@color/yellow" />
+            </LinearLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_option_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/fab_research_desc"
+                android:src="@drawable/fab_icon_arrow"
+                app:backgroundTint="@color/blue_light"
+                app:borderWidth="20dp"
+                app:fabCustomSize="60dp"
+                app:tint="@color/yellow" />
+            <!--    {DEPRECATED}    android:onClick="onFabClick"-->
+        </LinearLayout>
+    </RelativeLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
