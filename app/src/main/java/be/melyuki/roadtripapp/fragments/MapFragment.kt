@@ -79,6 +79,7 @@ class MapFragment private constructor(): Fragment() {
 
         binding.mapView.getMapboxMap().addOnMapClickListener{
             clearCitiesList()
+            releaseFocus()
         }
 
         binding.lvResearchCities.setOnItemClickListener { parent, view, position, id ->
@@ -193,5 +194,9 @@ class MapFragment private constructor(): Fragment() {
         binding.etResearchCity.clearFocus()
     }
 
+    private fun releaseFocus() : Boolean {
+        binding.etResearchCity.clearFocus()
+        return true
+    }
 
 }
