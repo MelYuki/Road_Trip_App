@@ -57,7 +57,7 @@ class MapFragment private constructor(): Fragment() {
         binding = FragmentMapBinding.inflate(inflater, container, false)
 
         // Chargement de la Map
-        binding.mapView.getMapboxMap().loadStyleUri(Style.MAPBOX_STREETS)
+//        binding.mapView.getMapboxMap().loadStyleUri(Style.MAPBOX_STREETS)
 //        logW("APPEL DE LA FONCTION", "GetUserLocation()") // -> OK
         getUserLocation()
 
@@ -122,7 +122,10 @@ class MapFragment private constructor(): Fragment() {
             )
             .build()
         // set camera position
-        binding.mapView.getMapboxMap().setCamera(cameraPosition)
+        binding.mapView.getMapboxMap().apply {
+            loadStyleUri(Style.MAPBOX_STREETS)
+            setCamera(cameraPosition)
+        }
     }
 
     private fun checkLocationPermission() {
