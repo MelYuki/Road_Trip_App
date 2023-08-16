@@ -122,6 +122,15 @@ class MapFragment private constructor(): Fragment() {
     }
     // endregion
 
+    @SuppressLint("RestrictedApi")
+    private fun releaseFocus() : Boolean {
+        binding.etResearchCity.apply {
+            clearFocus()
+            view?.let { hideKeyboard(it) }
+        }
+        return true
+    }
+
     // @SuppressLint("MissingPermission")
     private fun getUserLocation() {
 
@@ -221,15 +230,6 @@ class MapFragment private constructor(): Fragment() {
             }
         }
         binding.etResearchCity.clearFocus()
-    }
-
-    @SuppressLint("RestrictedApi")
-    private fun releaseFocus() : Boolean {
-        binding.etResearchCity.apply {
-            clearFocus()
-            view?.let { hideKeyboard(it) }
-        }
-        return true
     }
 
 }
