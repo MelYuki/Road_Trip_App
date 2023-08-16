@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginVertical="@dimen/spacer_rt_btns"
-        android:layout_marginHorizontal="@dimen/spacer_fab">
+        android:layout_marginHorizontal="@dimen/spacer_inner">
         <Button
             android:id="@+id/btn_rt_new"
             android:layout_width="match_parent"

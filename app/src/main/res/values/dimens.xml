@@ -3,10 +3,11 @@
     <dimen name="spacer_inner">20dp</dimen>
     <dimen name="spacer_main_img">40dp</dimen>
     <dimen name="spacer_fab">10dp</dimen>
+    <dimen name="spacer_rt_btns">5dp</dimen>
 
     <dimen name="title_size">48sp</dimen>
 
     <dimen name="btn_text_size">20sp</dimen>
+
     <dimen name="label_tv_size">24sp</dimen>
-    <dimen name="spacer_rt_btns">5dp</dimen>
 </resources>
