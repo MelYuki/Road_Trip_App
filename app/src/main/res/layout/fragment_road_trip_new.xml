@@ -6,6 +6,7 @@
     tools:context=".fragments.RoadTripNewFragment">
 
     <TextView
+        android:id="@+id/tv_rt_test"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="ROAD TRIP NEW"

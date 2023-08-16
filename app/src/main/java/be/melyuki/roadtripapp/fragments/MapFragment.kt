@@ -47,6 +47,7 @@ class MapFragment private constructor(): Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // Initialisation du Provider du LocationService d'android
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireContext())
     }
 
@@ -75,10 +76,14 @@ class MapFragment private constructor(): Fragment() {
         binding.btnResearchCity.setOnClickListener {
             getCitiesList()
             hideKeyboard(it)
+            binding.lvResearchCities.visibility = View.VISIBLE
+        }
+        binding.etResearchCity.setOnFocusChangeListener { v, hasFocus ->
+            if (hasFocus) binding.lvResearchCities.visibility = View.VISIBLE
         }
 
         binding.mapView.getMapboxMap().addOnMapClickListener{
-            clearCitiesList()
+            hideCitiesList()
             releaseFocus()
         }
 
@@ -86,36 +91,33 @@ class MapFragment private constructor(): Fragment() {
 
             val element = parent.getItemAtPosition(position) as MapResearchModel
 //            Toast.makeText(requireContext(), "Click on '${element.displayName}' at position : $position", Toast.LENGTH_LONG).show()
-            clearCitiesList()
+            hideCitiesList()
             showCityOnMap(element)
-        }
-
-        binding.etResearchCity.setOnFocusChangeListener { v, hasFocus ->
-            if(hasFocus) notifyFocusChanged()
         }
         // endregion
 
         return binding.root
     }
 
-
-    // region Event to Activity
+    // region EventListener to Activity
     fun interface OnSearchFocusListener {
         fun onHasSearchFocus()
     }
 
-    // 2eme Solution
+    // 1ere Solution -> EXPLICITE
 //    private var searchFocusListener : OnSearchFocusListener? = null
 //    fun setOnSearchFocusListener(listener : OnSearchFocusListener) {
 //        searchFocusListener = listener
 //    }
 
     private fun notifyFocusChanged() {
+
+        // 2eme Solution -> IMPLICITE
         // Récup depuis le parent (si celui-ci l'implemente)
         val listener = activity as? OnSearchFocusListener
         listener?.onHasSearchFocus()
 
-        // Via le setter du listener (2eme solution)
+        // 1ere solution: Via le setter du listener
 //        searchFocusListener?.onHasSearchFocus()
     }
     // endregion
@@ -193,11 +195,12 @@ class MapFragment private constructor(): Fragment() {
         adapter.notifyDataSetChanged()
     }
 
-    private fun clearCitiesList () : Boolean {
+    private fun hideCitiesList () : Boolean {
 
-        citiesFound.clear()
+//        citiesFound.clear()
         // Optimisation: cacher la liste et ne pas la clear
-        adapter.notifyDataSetChanged()
+        binding.lvResearchCities.visibility = View.GONE
+//        adapter.notifyDataSetChanged()
 
         return true
     }
@@ -220,8 +223,12 @@ class MapFragment private constructor(): Fragment() {
         binding.etResearchCity.clearFocus()
     }
 
+    @SuppressLint("RestrictedApi")
     private fun releaseFocus() : Boolean {
-        binding.etResearchCity.clearFocus()
+        binding.etResearchCity.apply {
+            clearFocus()
+            view?.let { hideKeyboard(it) }
+        }
         return true
     }
 
