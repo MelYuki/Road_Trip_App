@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="@dimen/spacer_inner"
+    android:background="@color/purple"
     tools:context=".activities.RoadTripActivity">
 
     <TextView
@@ -23,24 +23,44 @@
         android:text="@string/title_roadtrips"
         android:textSize="@dimen/title_size"
         android:textStyle="italic"
-        android:textColor="@color/blue_light"
+        android:textColor="@color/yellow"
         android:fontFamily="cursive"
         android:textAlignment="center"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="500dp"
-            android:src="@mipmap/ic_launcher_foreground"/>
-
-        <TextView
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="@dimen/spacer_rt_btns"
+        android:layout_marginHorizontal="@dimen/spacer_fab">
+        <Button
+            android:id="@+id/btn_rt_new"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="IN PROGRESS..."
-            android:textSize="36sp"
-            android:textAlignment="center"/>
+            android:layout_weight="1"
+            android:text="@string/text_rt_btn_new"
+            android:textStyle="bold"
+            android:textColor="@color/purple"
+            android:backgroundTint="@color/pink"/>
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacer_fab"/>
+        <Button
+            android:id="@+id/btn_rt_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/text_rt_btn_list"
+            android:textStyle="bold"
+            android:textColor="@color/purple"
+            android:backgroundTint="@color/pink"/>
     </LinearLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fcv_rt_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
 </LinearLayout>
