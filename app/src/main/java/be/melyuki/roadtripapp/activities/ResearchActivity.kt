@@ -1,16 +1,18 @@
 package be.melyuki.roadtripapp.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
 import be.melyuki.roadtripapp.R
 import be.melyuki.roadtripapp.databinding.ActivityResearchBinding
 import be.melyuki.roadtripapp.fragments.MapFragment
-import com.google.android.material.internal.ViewUtils.showKeyboard
+import com.rw.keyboardlistener.KeyboardUtils
 
-class ResearchActivity : AppCompatActivity() {
+
+class ResearchActivity : AppCompatActivity(), MapFragment.OnSearchFocusListener {
 
     private lateinit var binding : ActivityResearchBinding
 
@@ -24,14 +26,19 @@ class ResearchActivity : AppCompatActivity() {
 
         loadMapFrag()
 
-        binding.tvFabLike.visibility = View.GONE
-        binding.tvFabDistance.visibility = View.GONE
-        binding.tvFabWeather.visibility = View.GONE
-        binding.tvFabPoi.visibility = View.GONE
-        binding.tvFabRoadtrip.visibility = View.GONE
+        hideFabs()
 
         binding.fabOptionBtn.setOnClickListener { getOptionMenu() }
 
+        // Reaction à l'élévation du clavier
+        // Solution
+        // https://github.com/ravindu1024/android-keyboardlistener
+        KeyboardUtils.addKeyboardToggleListener(this) { isVisible ->
+            if (isVisible) hideFabs()
+        }
+    }
+    override fun onHasSearchFocus() {
+        Toast.makeText(this, "Search Focus", Toast.LENGTH_LONG).show()
     }
 
     private fun getOptionMenu() {

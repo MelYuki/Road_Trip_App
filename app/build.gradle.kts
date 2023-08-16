@@ -56,8 +56,7 @@ dependencies {
 
     implementation("androidx.fragment:fragment-ktx:1.6.1")
 
-    implementation("com.mapbox.mapboxsdk:mapbox-android-geocoder:1.0.0@aar")
-
     implementation("com.google.android.gms:play-services-location:21.0.1")
 
+    implementation("com.github.ravindu1024:android-keyboardlistener:1.0.0")
 }

@@ -89,10 +89,36 @@ class MapFragment private constructor(): Fragment() {
             clearCitiesList()
             showCityOnMap(element)
         }
+
+        binding.etResearchCity.setOnFocusChangeListener { v, hasFocus ->
+            if(hasFocus) notifyFocusChanged()
+        }
         // endregion
 
         return binding.root
     }
+
+
+    // region Event to Activity
+    fun interface OnSearchFocusListener {
+        fun onHasSearchFocus()
+    }
+
+    // 2eme Solution
+//    private var searchFocusListener : OnSearchFocusListener? = null
+//    fun setOnSearchFocusListener(listener : OnSearchFocusListener) {
+//        searchFocusListener = listener
+//    }
+
+    private fun notifyFocusChanged() {
+        // Récup depuis le parent (si celui-ci l'implemente)
+        val listener = activity as? OnSearchFocusListener
+        listener?.onHasSearchFocus()
+
+        // Via le setter du listener (2eme solution)
+//        searchFocusListener?.onHasSearchFocus()
+    }
+    // endregion
 
     // @SuppressLint("MissingPermission")
     private fun getUserLocation() {

@@ -22,7 +22,7 @@ dependencyResolutionManagement {
                 password = extra["MAPBOX_DOWNLOADS_TOKEN"] as String?
             }
         }
-
+        maven(url = "https://jitpack.io")
     }
 }
 
