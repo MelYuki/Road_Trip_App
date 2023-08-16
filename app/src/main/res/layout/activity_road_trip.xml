@@ -39,6 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/text_rt_btn_new"
+            android:textSize="@dimen/btn_text_size"
             android:textStyle="bold"
             android:textColor="@color/purple"
             android:backgroundTint="@color/pink"/>
@@ -52,6 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/text_rt_btn_list"
+            android:textSize="@dimen/btn_text_size"
             android:textStyle="bold"
             android:textColor="@color/purple"
             android:backgroundTint="@color/pink"/>

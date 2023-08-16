@@ -9,23 +9,28 @@
 
     <string name="img_main_globe">globe de la page principale</string>
 
-    <string name="btn_research">Research</string>
-    <string name="btn_fav">Favorites</string>
-    <string name="btn_roadtrip">Road Trips</string>
+    <string name="text_main_btn_research">Research</string>
+    <string name="text_main_btn_fav">Favorites</string>
+    <string name="text_main_btn_roadtrip">Road Trips</string>
+    <string name="text_rt_btn_new">New</string>
+    <string name="text_rt_btn_list">List</string>
+    <string name="text_research_fab_like">Like</string>
+    <string name="text_research_fab_distance">Distance</string>
+    <string name="text_research_fab_weather">Weather</string>
+    <string name="text_research_fab_poi">Points of Interests</string>
+    <string name="text_research_fab_roadtrip">Schedule Road Trip</string>
 
     <string name="fab_research_desc">Option Button</string>
 
-    <string name="et_main_placeholder_city">Enter a city ...</string>
+    <string name="et_main_placeholder_city">Enter a city …</string>
 
-    <!-- Clef "publique" utilisé par la map -->
-    <string name="mapbox_access_token">pk.eyJ1IjoibWVseXVraSIsImEiOiJjbGwza2V2bmEwbDgxM2VvNWFiMG5iNzgxIn0.O5QAc-VzqQEsOUE5740TWw</string>
     <string name="item_city_default_name">display_name</string>
     <string name="item_city_default_lat">latitude</string>
     <string name="item_city_default_lon">longitude</string>
+
     <string name="tv_item_city_lat">Lat: %s</string>
     <string name="tv_item_city_long">Lon: %s</string>
-    <string name="text_rt_btn_new">NEW</string>
-    <string name="text_rt_btn_list">LIST</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Clef "publique" utilisé par la map -->
+    <string name="mapbox_access_token">pk.eyJ1IjoibWVseXVraSIsImEiOiJjbGwza2V2bmEwbDgxM2VvNWFiMG5iNzgxIn0.O5QAc-VzqQEsOUE5740TWw</string>
 </resources>

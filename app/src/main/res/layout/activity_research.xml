@@ -69,7 +69,7 @@
                     android:layout_marginBottom="@dimen/spacer_fab"
                     android:layout_marginEnd="@dimen/spacer_fab"
                     android:gravity="center_vertical"
-                    android:text="Like"
+                    android:text="@string/text_research_fab_like"
                     android:textColor="@color/purple"
                     android:textStyle="bold"/>
 
@@ -100,7 +100,7 @@
                     android:layout_marginBottom="@dimen/spacer_fab"
                     android:layout_marginEnd="@dimen/spacer_fab"
                     android:gravity="center_vertical"
-                    android:text="Distance"
+                    android:text="@string/text_research_fab_distance"
                     android:textColor="@color/purple"
                     android:textStyle="bold"/>
 
@@ -131,7 +131,7 @@
                     android:layout_marginBottom="@dimen/spacer_fab"
                     android:layout_marginEnd="@dimen/spacer_fab"
                     android:gravity="center_vertical"
-                    android:text="Weather"
+                    android:text="@string/text_research_fab_weather"
                     android:textColor="@color/purple"
                     android:textStyle="bold"/>
 
@@ -162,7 +162,7 @@
                     android:layout_marginBottom="@dimen/spacer_fab"
                     android:layout_marginEnd="@dimen/spacer_fab"
                     android:gravity="center_vertical"
-                    android:text="Points of Interests"
+                    android:text="@string/text_research_fab_poi"
                     android:textColor="@color/purple"
                     android:textStyle="bold"/>
 
@@ -193,7 +193,7 @@
                     android:layout_marginBottom="@dimen/spacer_fab"
                     android:layout_marginEnd="@dimen/spacer_fab"
                     android:gravity="center_vertical"
-                    android:text="Schedule  Road Trip"
+                    android:text="@string/text_research_fab_roadtrip"
                     android:textColor="@color/purple"
                     android:textStyle="bold"/>
 
