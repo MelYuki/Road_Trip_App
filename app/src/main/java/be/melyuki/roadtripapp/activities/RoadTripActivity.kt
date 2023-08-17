@@ -44,8 +44,8 @@ class RoadTripActivity : AppCompatActivity() {
         supportFragmentManager.commit {
             setCustomAnimations(
                 android.R.anim.slide_in_left,
-                android.R.anim.fade_out,
-                android.R.anim.fade_in,
+                android.R.anim.slide_out_right,
+                android.R.anim.slide_in_left,
                 android.R.anim.slide_out_right
             )
             setReorderingAllowed(true)

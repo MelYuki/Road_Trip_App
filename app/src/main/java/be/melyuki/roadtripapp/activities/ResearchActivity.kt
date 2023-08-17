@@ -12,7 +12,7 @@ import be.melyuki.roadtripapp.fragments.MapFragment
 import com.rw.keyboardlistener.KeyboardUtils
 
 
-class ResearchActivity : AppCompatActivity(), MapFragment.OnSearchFocusListener {
+class ResearchActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityResearchBinding
 
@@ -36,9 +36,6 @@ class ResearchActivity : AppCompatActivity(), MapFragment.OnSearchFocusListener 
         KeyboardUtils.addKeyboardToggleListener(this) { isVisible ->
             if (isVisible) hideFabs()
         }
-    }
-    override fun onHasSearchFocus() {
-        Toast.makeText(this, "Search Focus", Toast.LENGTH_LONG).show()
     }
 
     private fun getOptionMenu() {

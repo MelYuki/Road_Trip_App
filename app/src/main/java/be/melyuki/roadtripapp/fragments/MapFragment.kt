@@ -93,6 +93,11 @@ class MapFragment private constructor(): Fragment() {
 //            Toast.makeText(requireContext(), "Click on '${element.displayName}' at position : $position", Toast.LENGTH_LONG).show()
             hideCitiesList()
             showCityOnMap(element)
+
+            // Dire au parent de rendre le fab_like "Clickable"
+            // Dans le parent, Au click du fab_like:
+            // - Ajouter l'élément à la RecyclerView de la FavActivity
+            // - Changer l'icone et le tv du fab_like
         }
         // endregion
 
@@ -100,26 +105,7 @@ class MapFragment private constructor(): Fragment() {
     }
 
     // region EventListener to Activity
-    fun interface OnSearchFocusListener {
-        fun onHasSearchFocus()
-    }
 
-    // 1ere Solution -> EXPLICITE
-//    private var searchFocusListener : OnSearchFocusListener? = null
-//    fun setOnSearchFocusListener(listener : OnSearchFocusListener) {
-//        searchFocusListener = listener
-//    }
-
-    private fun notifyFocusChanged() {
-
-        // 2eme Solution -> IMPLICITE
-        // Récup depuis le parent (si celui-ci l'implemente)
-        val listener = activity as? OnSearchFocusListener
-        listener?.onHasSearchFocus()
-
-        // 1ere solution: Via le setter du listener
-//        searchFocusListener?.onHasSearchFocus()
-    }
     // endregion
 
     @SuppressLint("RestrictedApi")
