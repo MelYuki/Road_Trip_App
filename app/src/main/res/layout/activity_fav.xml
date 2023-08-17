@@ -4,44 +4,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="@dimen/spacer_inner"
     tools:context=".activities.FavActivity">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/title_main_geektrotters"
-        android:textSize="@dimen/title_size"
-        android:textStyle="bold|italic"
-        android:textColor="@color/pink"
-        android:fontFamily="cursive"
-        android:textAlignment="center"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/title_favorites"
-        android:textSize="@dimen/title_size"
-        android:textStyle="italic"
-        android:textColor="@color/blue_light"
-        android:fontFamily="cursive"
-        android:textAlignment="center"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="500dp"
-            android:src="@mipmap/ic_launcher_foreground"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/blue_dark">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="IN PROGRESS..."
-            android:textSize="36sp"
+            android:text="@string/title_main_geektrotters"
+            android:textSize="@dimen/title_size"
+            android:textStyle="bold|italic"
+            android:textColor="@color/pink"
+            android:fontFamily="cursive"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title_favorites"
+            android:textSize="@dimen/title_size"
+            android:textStyle="italic"
+            android:textColor="@color/yellow"
+            android:fontFamily="cursive"
             android:textAlignment="center"/>
     </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_fav_cities"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingHorizontal="@dimen/spacer_fab"
+        android:paddingTop="@dimen/spacer_fab"
+        tools:listitem="@layout/item_rv_fav"/>
 
 </LinearLayout>
