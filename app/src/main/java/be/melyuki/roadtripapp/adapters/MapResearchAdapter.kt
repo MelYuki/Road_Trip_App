@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 import be.melyuki.roadtripapp.R
-import be.melyuki.roadtripapp.models.MapResearchModel
+import be.melyuki.roadtripapp.models.CityModel
 
-class MapResearchAdapter(val context: Context, val nominatimList: MutableList<MapResearchModel>) :
+class MapResearchAdapter(val context: Context, val nominatimList: MutableList<CityModel>) :
     BaseAdapter() {
 
 //    lateinit var name : String
@@ -38,7 +38,7 @@ class MapResearchAdapter(val context: Context, val nominatimList: MutableList<Ma
 //            long = c.lon.toString()
 //        }
 
-        val element : MapResearchModel = nominatimList[position]
+        val element : CityModel = nominatimList[position]
 
         val lonText = context.getString(R.string.tv_item_city_long)
         val latText = context.getString(R.string.tv_item_city_lat, element.lat)

@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import be.melyuki.roadtripapp.R
-import be.melyuki.roadtripapp.models.MapResearchModel
+import be.melyuki.roadtripapp.models.CityModel
 
-class ListFavAdapter(val context : Context, val cities : List<MapResearchModel>) :
+class ListFavAdapter(val context : Context, val cities : List<CityModel>) :
     RecyclerView.Adapter<ListFavAdapter.CityViewHolder>() {
     class CityViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
 
@@ -44,7 +44,7 @@ class ListFavAdapter(val context : Context, val cities : List<MapResearchModel>)
     }
 
     override fun onBindViewHolder(holder: CityViewHolder, position: Int) {
-        val element : MapResearchModel = cities[position]
+        val element : CityModel = cities[position]
 
         holder.setTitle(element.displayName.toString())
         holder.setLon(element.lon.toString())

@@ -12,12 +12,14 @@ class DbContract {
         companion object {
             const val TABLE_NAME = "favorites"
 
+            const val ID = "id"
             const val CITY_NAME = "city_name"
             const val LONGITUDE = "longitude"
             const val LATITUDE = "latitude"
 
             const val SCRIPT_CREATE =
                 "CREATE TABLE $TABLE_NAME (" +
+                        "$ID LONG, " +
                         "$CITY_NAME VARCHAR(50), " +
                         "$LONGITUDE VARCHAR(50), " +
                         "$LATITUDE VARCHAR(50) " +

@@ -16,7 +16,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import be.melyuki.roadtripapp.adapters.MapResearchAdapter
 import be.melyuki.roadtripapp.databinding.FragmentMapBinding
-import be.melyuki.roadtripapp.models.MapResearchModel
+import be.melyuki.roadtripapp.models.CityModel
 import be.melyuki.roadtripapp.services.NominatimRequest
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -36,7 +36,7 @@ class MapFragment private constructor(): Fragment() {
 
     private lateinit var fusedLocationClient : FusedLocationProviderClient
 
-    private val citiesFound : MutableList<MapResearchModel> = mutableListOf()
+    private val citiesFound : MutableList<CityModel> = mutableListOf()
 
     companion object {
         @JvmStatic
@@ -63,7 +63,7 @@ class MapFragment private constructor(): Fragment() {
         getUserLocation()
 
         // Adapter
-//        adapter = ArrayAdapter<MapResearchModel>(
+//        adapter = ArrayAdapter<CityModel>(
 //            requireContext(),
 //            android.R.layout.simple_list_item_1,
 //            android.R.id.text1,
@@ -89,14 +89,17 @@ class MapFragment private constructor(): Fragment() {
 
         binding.lvResearchCities.setOnItemClickListener { parent, view, position, id ->
 
-            val element = parent.getItemAtPosition(position) as MapResearchModel
+            val element = parent.getItemAtPosition(position) as CityModel
 //            Toast.makeText(requireContext(), "Click on '${element.displayName}' at position : $position", Toast.LENGTH_LONG).show()
             hideCitiesList()
             showCityOnMap(element)
 
-            // Dire au parent de rendre le fab_like "Clickable"
+            // Dire au parent de rendre le fab_like "Enable"
+            onCitySelectedListener?.onCitySelected(element)
+
             // Dans le parent, Au click du fab_like:
-            // - Ajouter l'élément à la RecyclerView de la FavActivity
+            // - Ajouter l'élément à la DB
+            // - Dire la FavActivity de charger la liste de la DB
             // - Changer l'icone et le tv du fab_like
         }
         // endregion
@@ -105,7 +108,17 @@ class MapFragment private constructor(): Fragment() {
     }
 
     // region EventListener to Activity
+    fun interface OnActionListener {
+        fun onCitySelected(city : CityModel?)
+    }
 
+    // ↓ Cette variable va contenir un objet de type "OnActionListener" et donc, on peut réaliser les méthodes depuis celui-ci
+    private var onCitySelectedListener : OnActionListener? = null
+
+    fun setOnCitySelectedListener(listener: OnActionListener) {
+        // Cette fonction ne doit être appeler que par le parent pour lui communiqué le listener à exploiter
+        onCitySelectedListener = listener
+    }
     // endregion
 
     @SuppressLint("RestrictedApi")
@@ -168,7 +181,7 @@ class MapFragment private constructor(): Fragment() {
         }
     }
 
-    private fun showCityOnMap(city: MapResearchModel) {
+    private fun showCityOnMap(city: CityModel) {
 
         val lon = city.lon!!.toDouble()
         val lat = city.lat!!.toDouble()
@@ -183,7 +196,7 @@ class MapFragment private constructor(): Fragment() {
         binding.mapView.getMapboxMap().setCamera(cameraPosition)
     }
 
-    private fun showCitiesList(cities: List<MapResearchModel>) {
+    private fun showCitiesList(cities: List<CityModel>) {
 
         citiesFound.clear()
         citiesFound.addAll(cities)
@@ -205,8 +218,8 @@ class MapFragment private constructor(): Fragment() {
 
         lifecycleScope.launch {
             try {
-                val cities : List<MapResearchModel>? = NominatimRequest().searchCity(city)
-                logW("Cities : ", cities.toString())
+                val cities : List<CityModel>? = NominatimRequest().searchCity(city)
+//                logW("Cities : ", cities.toString())
                 if (cities != null) {
                     showCitiesList(cities)
                 }

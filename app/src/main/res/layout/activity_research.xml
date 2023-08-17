@@ -82,7 +82,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/spacer_fab"
                     android:contentDescription="@string/fab_research_desc"
-                    android:clickable="false"
                     android:src="@drawable/fab_icon_star"
                     app:backgroundTint="@color/blue_light"
                     app:borderWidth="20dp"

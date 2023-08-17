@@ -1,6 +1,6 @@
 package be.melyuki.roadtripapp.services
 
-import be.melyuki.roadtripapp.models.MapResearchModel
+import be.melyuki.roadtripapp.models.CityModel
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.Dispatchers
@@ -9,7 +9,7 @@ import java.net.HttpURLConnection
 import java.net.URL
 
 class NominatimRequest() {
-    suspend fun searchCity(city: String) : List<MapResearchModel>? {
+    suspend fun searchCity(city: String) : List<CityModel>? {
 
         return withContext(Dispatchers.IO) {
 
@@ -28,8 +28,8 @@ class NominatimRequest() {
 
                 // Solution:
                 // https://www.baeldung.com/kotlin/gson-parse-arrays
-                val typeToken = object : TypeToken<List<MapResearchModel>>() {}.type
-                val result = Gson().fromJson<List<MapResearchModel>>(json, typeToken)
+                val typeToken = object : TypeToken<List<CityModel>>() {}.type
+                val result = Gson().fromJson<List<CityModel>>(json, typeToken)
 
                 return@withContext result
             }
