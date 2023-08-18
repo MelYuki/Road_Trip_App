@@ -2,14 +2,18 @@ package be.melyuki.roadtripapp.activities
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
+import androidx.lifecycle.lifecycleScope
 import be.melyuki.roadtripapp.R
 import be.melyuki.roadtripapp.database.dao.FavDao
 import be.melyuki.roadtripapp.databinding.ActivityResearchBinding
 import be.melyuki.roadtripapp.fragments.MapFragment
 import be.melyuki.roadtripapp.models.CityModel
 import com.rw.keyboardlistener.KeyboardUtils
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 
 class ResearchActivity : AppCompatActivity() {
@@ -66,10 +70,16 @@ class ResearchActivity : AppCompatActivity() {
     private fun updateFavList(city: CityModel) {
 
         if (!switchFabLike(city)) {
-            favDao.create(city)
+            lifecycleScope.launch(Dispatchers.IO) {
+                favDao.create(city)
+            }
+            Toast.makeText(this, R.string.toast_add_to_favlist, Toast.LENGTH_LONG).show()
         }
         else {
-            favDao.delete(city.placeId!!.toLong())
+            lifecycleScope.launch(Dispatchers.IO) {
+                favDao.delete(city.placeId!!.toLong())
+            }
+            Toast.makeText(this, R.string.toast_del_from_favlist, Toast.LENGTH_LONG).show()
         }
         switchFabLike(city)
     }

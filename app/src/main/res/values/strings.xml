@@ -32,6 +32,9 @@
     <string name="tv_text_fab_research_unlike" translatable="false">Unlike</string>
     <string name="tv_text_fab_research_like" translatable="false">Like</string>
 
+    <string name="toast_add_to_favlist">CITY ADDED\nTO FAVORITES</string>
+    <string name="toast_del_from_favlist">CITY DELETED\nFROM FAVORITES</string>
+
     <!-- Clef "publique" utilisé par la map -->
     <string name="mapbox_access_token" translatable="false">pk.eyJ1IjoibWVseXVraSIsImEiOiJjbGwza2V2bmEwbDgxM2VvNWFiMG5iNzgxIn0.O5QAc-VzqQEsOUE5740TWw</string>
 </resources>

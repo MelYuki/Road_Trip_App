@@ -12,4 +12,6 @@
     <string name="text_rt_btn_list">Liste</string>
     <string name="text_main_btn_fav">Favoris</string>
     <string name="text_main_btn_research">Recherche</string>
+    <string name="toast_add_to_favlist">VILLE AJOUTÉE\nAUX FAVORIS</string>
+    <string name="toast_del_from_favlist">VILLE SUPPRIMÉE\nDES FAVORIS</string>
 </resources>
