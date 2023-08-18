@@ -1,9 +1,7 @@
 package be.melyuki.roadtripapp.activities
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
 import be.melyuki.roadtripapp.R
@@ -33,8 +31,8 @@ class ResearchActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         loadMapFrag()
-
         hideFabs()
+        binding.fabLikeBtn.isEnabled = false
 
         binding.fabOptionBtn.setOnClickListener { getOptionMenu() }
 
@@ -46,25 +44,16 @@ class ResearchActivity : AppCompatActivity() {
         }
 
         favDao.openWritable()
-        binding.fabLikeBtn.isEnabled = false
         binding.fabLikeBtn.setOnClickListener {
             if(citySelected == null) return@setOnClickListener
 
 //            Toast.makeText(this, "fabLike ACTIVATED", Toast.LENGTH_LONG).show() // -> OK
-            Log.w(TAG, "Before Create: $citySelected")
-            favDao.create(citySelected!!)
-            val cities : List<CityModel> = favDao.getAll()
-            for (city in cities) {
-                Log.w(TAG, "Dao Create/GetAll: $city")
-            }
-
-//            if (!isLiked) {
-//                favDao.create(citySelected!!)
-//                isLiked = true
-//            }
-//            else {
-//                favDao.delete(citySelected!!)
-//                isLiked = false
+//            Log.w(TAG, "Before Create: $citySelected") // -> OK
+//            favDao.create(citySelected!!)
+            updateFavList(citySelected!!)
+//            val cities : List<CityModel> = favDao.getAll()
+//            for (city in cities) {
+//                Log.w(TAG, "Dao Create/GetAll: $city") // -> OK
 //            }
         }
     }
@@ -72,6 +61,33 @@ class ResearchActivity : AppCompatActivity() {
         super.onDestroy()
 
         favDao.close()
+    }
+
+    private fun updateFavList(city: CityModel) {
+
+        if (!switchFabLike(city)) {
+            favDao.create(city)
+        }
+        else {
+            favDao.delete(city.placeId!!.toLong())
+        }
+        switchFabLike(city)
+    }
+    private fun switchFabLike(city: CityModel) : Boolean {
+        val result = favDao.getById(city.placeId!!.toLong())
+//        Log.w(TAG, "checkCityInDb: $result") // -> OK
+        isLiked = result != null
+//        Log.w(TAG, "isLiked: $isLiked", ) // -> OK
+
+        return if (isLiked) {
+            binding.tvFabLike.text = getString(R.string.tv_text_fab_research_unlike)
+            binding.fabLikeBtn.setImageDrawable(this.getDrawable(R.drawable.fab_icon_star_liked))
+            true
+        } else {
+            binding.tvFabLike.text = getString(R.string.tv_text_fab_research_like)
+            binding.fabLikeBtn.setImageDrawable(this.getDrawable(R.drawable.fab_icon_star))
+            false
+        }
     }
 
     private fun getOptionMenu() {
@@ -131,13 +147,12 @@ class ResearchActivity : AppCompatActivity() {
         // Ecriture Interface Fonctionnelle et NON-Fonctionnelle
         fragMap.setOnCitySelectedListener(object : MapFragment.OnActionListener {
             override fun onCitySelected(city : CityModel?) {
-                if(city != null) binding.fabLikeBtn.isEnabled = true
-//                binding.fabLikeBtn.isEnabled = city != null
-
+                binding.fabLikeBtn.isEnabled = city != null
                 citySelected = city
 //                Log.w(TAG, "Content citySelected: $citySelected") // -> OK
 
                 // Ici qu'on va gérer si la ville est déjà liked -> check DB
+                switchFabLike(citySelected!!)
             }
         })
 
