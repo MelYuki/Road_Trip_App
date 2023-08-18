@@ -33,7 +33,7 @@ Utiliser une des API suivantes pour réaliser la fonctionnalité :
         * https://nominatim.org/release-docs/develop/api/Search/
         * https://countrystatecity.in/docs/
     * Pour la météo : « Open Weather Map »
-        * https:/openweathermap.org/current
+        * https://openweathermap.org/current
     * Pour obtenir les points d'intérêt d'une ville : « Geacoding » de mapbox
         * https://docs.mapbox.com/api/search/geocoding/
     * Pour rechercher des images par mot clef : « photos-search » de pexels
