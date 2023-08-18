@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Geek Trotters</string>
+    <string name="title_main_welcome">Bienvenue</string>
+    <string name="title_research">Recherche</string>
+    <string name="title_favorites">Favoris</string>
+    <string name="et_main_placeholder_city">Entrer une ville ...</string>
+    <string name="text_research_fab_roadtrip">Plannifier un Road Trip</string>
+    <string name="text_research_fab_poi">Points d\'intérêts</string>
+    <string name="text_research_fab_weather">Météo</string>
+    <string name="text_rt_btn_new">Nouveau</string>
+    <string name="text_rt_btn_list">Liste</string>
+    <string name="text_main_btn_fav">Favoris</string>
+    <string name="text_main_btn_research">Recherche</string>
+</resources>

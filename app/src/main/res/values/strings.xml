@@ -2,35 +2,34 @@
     <string name="app_name">Geek Trotters</string>
 
     <string name="title_main_welcome">Welcome</string>
-    <string name="title_main_geektrotters">Geek Trotters</string>
+    <string name="title_main_geektrotters" translatable="false">Geek Trotters</string>
     <string name="title_research">Research</string>
     <string name="title_favorites">Favorites</string>
-    <string name="title_roadtrips">Road Trips</string>
+    <string name="title_roadtrips" translatable="false">Road Trips</string>
 
-    <string name="img_main_globe">globe de la page principale</string>
+    <string name="img_main_desc" translatable="false">Homepage image</string>
+    <string name="fab_research_desc" translatable="false">Option Button</string>
 
     <string name="text_main_btn_research">Research</string>
     <string name="text_main_btn_fav">Favorites</string>
-    <string name="text_main_btn_roadtrip">Road Trips</string>
+    <string name="text_main_btn_roadtrip" translatable="false">Road Trips</string>
     <string name="text_rt_btn_new">New</string>
     <string name="text_rt_btn_list">List</string>
-    <string name="text_research_fab_like">Like</string>
-    <string name="text_research_fab_distance">Distance</string>
+    <string name="text_research_fab_like" translatable="false">Like</string>
+    <string name="text_research_fab_distance" translatable="false">Distance</string>
     <string name="text_research_fab_weather">Weather</string>
     <string name="text_research_fab_poi">Points of Interests</string>
     <string name="text_research_fab_roadtrip">Schedule Road Trip</string>
 
-    <string name="fab_research_desc">Option Button</string>
-
     <string name="et_main_placeholder_city">Enter a city …</string>
 
-    <string name="item_city_default_name">display_name</string>
-    <string name="item_city_default_lat">latitude</string>
-    <string name="item_city_default_lon">longitude</string>
+    <string name="item_city_default_name" translatable="false">display_name</string>
+    <string name="item_city_default_lat" translatable="false">latitude</string>
+    <string name="item_city_default_lon" translatable="false">longitude</string>
 
-    <string name="tv_item_city_lat">Lat: %s</string>
-    <string name="tv_item_city_long">Lon: %s</string>
+    <string name="tv_item_city_lat" translatable="false">Lat: %s</string>
+    <string name="tv_item_city_long" translatable="false">Lon: %s</string>
 
     <!-- Clef "publique" utilisé par la map -->
-    <string name="mapbox_access_token">pk.eyJ1IjoibWVseXVraSIsImEiOiJjbGwza2V2bmEwbDgxM2VvNWFiMG5iNzgxIn0.O5QAc-VzqQEsOUE5740TWw</string>
+    <string name="mapbox_access_token" translatable="false">pk.eyJ1IjoibWVseXVraSIsImEiOiJjbGwza2V2bmEwbDgxM2VvNWFiMG5iNzgxIn0.O5QAc-VzqQEsOUE5740TWw</string>
 </resources>

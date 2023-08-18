@@ -32,7 +32,7 @@
         android:layout_height="300dp"
         android:src="@drawable/globe_trotteurs"
         android:layout_marginVertical="@dimen/spacer_main_img"
-        android:contentDescription="@string/img_main_globe"/>
+        android:contentDescription="@string/img_main_desc"/>
 
     <TextView
         android:layout_width="match_parent"
