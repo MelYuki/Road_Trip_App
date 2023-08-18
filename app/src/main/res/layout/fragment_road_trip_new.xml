@@ -5,14 +5,28 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
+    android:layout_marginTop="@dimen/spacer_inner"
     tools:context=".fragments.RoadTripNewFragment">
 
-    <TextView
-        android:id="@+id/tv_rt_test"
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="ROAD TRIP NEW"
-        android:textSize="56sp"
+        android:layout_height="300dp"
+        android:src="@mipmap/ic_launcher_round"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ROAD TRIP\nNEW"
+        android:textStyle="italic|bold"
+        android:textSize="46sp"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="IN PROGRESS ..."
+        android:textSize="46sp"
         android:gravity="center"/>
 
 </LinearLayout>
